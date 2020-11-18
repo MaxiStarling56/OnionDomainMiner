@@ -1,0 +1,17 @@
+version: '3'
+
+# The actual miner service
+services: 
+    miner:
+        build: ./src/
+        image: oniondomainminer
+        volumes:
+            - MinedDomains:/odm/domains
+
+# The volume where the mined domains will be saved
+volumes:
+    MinedDomains:
+#        driver_opts:
+#            type: none
+#            device: ./MinedDomains
+#            o: bind
